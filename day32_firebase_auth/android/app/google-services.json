@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "534376078013",
+    "project_id": "day32firebase-auth",
+    "storage_bucket": "day32firebase-auth.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534376078013:android:9e7a37c5500f8ba540b5d4",
+        "android_client_info": {
+          "package_name": "com.example.day32_firebase_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534376078013-32nh7bfer02qv7nrp1apjh58blaquv2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqGwIAPcIBK8_skRM1TW3nICJ1WJRDS3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534376078013-32nh7bfer02qv7nrp1apjh58blaquv2o.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "534376078013-r50m1v66j1h2bah67srvqg29m37qjca4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.day32FirebaseAuth"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
