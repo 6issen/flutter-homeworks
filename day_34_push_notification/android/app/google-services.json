@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1002528671874",
+    "project_id": "day34firebase-push-notif",
+    "storage_bucket": "day34firebase-push-notif.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002528671874:android:02e597ea1a129202458c9b",
+        "android_client_info": {
+          "package_name": "com.example.day_34_push_notification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtE3mm9vOYxlHFOmVRQQwZprjTex-6b14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
