@@ -9,6 +9,10 @@ class ExpenseProvider with ChangeNotifier {
 
   List<Expense> get items => [..._items];
 
+  double get totalAmount {
+    return _items.fold(0.0, (sum, item) => sum + item.amount);
+  }
+
   void addExpense(Expense expense) {
     _items.add(expense);
     notifyListeners();
