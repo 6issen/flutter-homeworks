@@ -1,0 +1,62 @@
+name: Flutter CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: day_43_ci_cd
+
+      - name: Analyze code
+        run: flutter analyze
+        working-directory: day_43_ci_cd
+
+      - name: Run tests
+        run: flutter test
+        working-directory: day_43_ci_cd
+
+      # Build Dev APK (Debug)
+      - name: Build Dev APK
+        run: flutter build apk --flavor dev --target lib/main_dev.dart --debug
+        working-directory: day_43_ci_cd
+
+      # Build Prod APK (Release) with auto-incremented build number
+      - name: Build Prod APK
+        run: |
+          flutter build apk --flavor prod --target lib/main_prod.dart --release \
+          --build-number=$GITHUB_RUN_NUMBER
+        working-directory: day_43_ci_cd
+
+      - name: Upload Dev APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: dev-apk
+          path: day_43_ci_cd/build/app/outputs/flutter-apk/app-dev-debug.apk
+
+      - name: Upload Prod APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: prod-apk
+          path: day_43_ci_cd/build/app/outputs/flutter-apk/app-prod-release.apk
